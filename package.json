@@ -7,14 +7,14 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "dependencies": {
-        "moment": "~2.7"
+        "moment": "~2.10"
     },
     "engines": {
         "node": ">=0.10"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/solygen/node-buckets.git"
+        "url": "https://github.com/solygen/node-cluster-files.git"
     },
     "preferGlobal": "true",
     "bin": {
