@@ -1,0 +1,35 @@
+{
+    "name": "cluster-files",
+    "version": "0.1.0",
+    "description": "CLI that rename files of a directory based on the creation date and clusters them in monthly based subdirectories",
+    "main": "lib/buckets",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "moment": "~2.7"
+    },
+    "engines": {
+        "node": ">=0.10"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/solygen/node-buckets.git"
+    },
+    "preferGlobal": "true",
+    "bin": {
+        "cluster": "lib/cluster.js"
+    },
+    "keywords": [
+        "cli",
+        "filesytem",
+        "directory"
+    ],
+    "author": "Frank Paczynski <frank@solygen.de> (https://github.com/solygen)",
+    "license": "Unlicense",
+    "bugs": {
+        "url": "https://github.com/solygen/node-buckets/issues"
+    },
+    "homepage": "https://github.com/solygen"
+}
+
