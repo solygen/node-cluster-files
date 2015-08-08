@@ -1,12 +1,13 @@
 {
     "name": "cluster-files",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "CLI that rename files of a directory based on the creation date and clusters them in monthly based subdirectories",
     "main": "lib/buckets",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "dependencies": {
+        "inquirer": "^0.9.0",
         "moment": "~2.10"
     },
     "engines": {
@@ -32,4 +33,3 @@
     },
     "homepage": "https://github.com/solygen"
 }
-
