@@ -1,35 +1,37 @@
 {
-    "name": "cluster-files",
-    "version": "0.1.1",
-    "description": "CLI that rename files of a directory based on the creation date and clusters them in monthly based subdirectories",
-    "main": "lib/buckets",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "dependencies": {
-        "inquirer": "^0.9.0",
-        "moment": "~2.10"
-    },
-    "engines": {
-        "node": ">=0.10"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/solygen/node-cluster-files.git"
-    },
-    "preferGlobal": "true",
-    "bin": {
-        "cluster": "lib/cluster.js"
-    },
-    "keywords": [
-        "cli",
-        "filesytem",
-        "directory"
-    ],
-    "author": "Frank Paczynski <frank@solygen.de> (https://github.com/solygen)",
-    "license": "Unlicense",
-    "bugs": {
-        "url": "https://github.com/solygen/node-buckets/issues"
-    },
-    "homepage": "https://github.com/solygen"
+  "name": "cluster-files",
+  "version": "0.1.2",
+  "description": "CLI that rename files of a directory based on the creation date and clusters them in monthly based subdirectories",
+  "main": "lib/buckets",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "inquirer": "^0.9.0",
+    "minimist": "^1.1.3",
+    "moment": "~2.10",
+    "fs-bfs": "0.1.0"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/solygen/node-cluster-files.git"
+  },
+  "preferGlobal": "true",
+  "bin": {
+    "cluster": "bin/cluster.js"
+  },
+  "keywords": [
+    "cli",
+    "filesytem",
+    "directory"
+  ],
+  "author": "Frank Paczynski <frank@solygen.de> (https://github.com/solygen)",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/solygen/node-cluster-files/issues"
+  },
+  "homepage": "https://github.com/solygen"
 }

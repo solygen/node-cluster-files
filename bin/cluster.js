@@ -6,78 +6,34 @@
     var fs = require('fs'),
         moment = require('moment'),
         inquirer = require('inquirer'),
-        pt = require('path');
+        pt = require('path'),
+        bfs = require('fs-bfs');
 
     // first cli parameter or current directory
-    var base = process.argv[2] || process.cwd(),
-        folders = [],
-        files = {};
+    var base = process.argv[2] || process.cwd();
 
-    if (!fs.existsSync(base)) {
-        console.error('Folder ' + base + ' does not exists');
-        return;
-    }
-
-    // ask the user to contiune
-    inquirer.prompt([{
-        type: "list",
-        name: "process",
-        message: "Process with folder '" + base + "' ?",
-        choices: ['yes', 'no']
-    }], function(answers) {
-        console.log(JSON.stringify(answers, null, "  "));
+    function cont (answers) {
 
         if (answers.process !== 'yes') return;
 
-        //add base folder to queue
-        folders.push(base);
-
-        //process folders
-        function read(folder) {
-            var hash = {};
-            if (fs.existsSync(folder)) {
-
-                var content = fs.readdirSync(folder);
-
-                content.forEach(function(file) {
-                    var path = pt.join(folder, file),
-                        stats = fs.statSync(path);
-                    if (stats.isDirectory()) {
-                        //add to folder queue
-                        //folders.push(path);
-                    } else {
-                        //add to files queue
-                        files[path] = true;
-                    }
-                });
-            }
-        }
-
-        // traverse subfolders
-        var i = 0;
-        while (folders[i]) {
-            var folder = folders[i];
-            read(folder);
-            i++;
-        }
+        var data = bfs(base);
 
         function extension(file) {
             var list = file.split('.');
             return list[list.length - 1];
         }
 
-        //move files to base folder
-        Object.keys(files).forEach(function(key) {
-            var path = key,
-                file = pt.basename(path),
+        // move files to subfolders
+        (data.files).forEach(function(data) {
+            var path = data.path,
+                file = data.name,
                 counter = 1;
 
-            var stats = fs.statSync(key),
+            var stats = fs.statSync(path),
                 subdir = stats.mtime.toISOString().substr(0, 7),
                 dir = pt.join(base, subdir),
                 target = pt.join(dir, file),
                 time = moment(stats.mtime);
-
 
             var name = time.format('YYYY-MM-DD_HH-mm-ss') + '.' + extension(file);
             target = pt.join(dir, name);
@@ -89,17 +45,25 @@
                 target = pt.join(dir, name);
             }
 
-            //create subdir
+            // create subdir
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir);
             }
 
-            //rename/move
+            // rename/move
             if (!fs.existsSync(target)) {
                 fs.renameSync(path, target);
-                delete files[key];
             }
         });
-    });
+    }
+
+
+    // ask the user to contiune
+    inquirer.prompt([{
+        type: "list",
+        name: "process",
+        message: "Process with folder '" + base + "' ?",
+        choices: ['yes', 'no']
+    }], cont);
 
 }());
