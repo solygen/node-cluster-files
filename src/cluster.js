@@ -1,18 +1,18 @@
 //#!/usr/bin/env node
-(function() {
+'use strict';
 
-    'use strict';
+(function () {
 
-    var fs = require('fs'),
-        moment = require('moment'),
+    let fs = require('fs'),
         inquirer = require('inquirer'),
         pt = require('path'),
+        moment = require('moment'),
         bfs = require('fs-bfs');
 
     // first cli parameter or current directory
     var base = process.argv[2] || process.cwd();
 
-    function cont (answers) {
+    function cont(answers) {
 
         if (answers.process !== 'yes') return;
 
@@ -57,13 +57,11 @@
         });
     }
 
-
     // ask the user to contiune
     inquirer.prompt([{
-        type: "list",
-        name: "process",
-        message: "Process with folder '" + base + "' ?",
+        type: 'list',
+        name: 'process',
+        message: `Process with folder ${base} ?`,
         choices: ['yes', 'no']
     }], cont);
-
 }());
