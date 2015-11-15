@@ -13,7 +13,7 @@ _function: process(basepath)_
 returns hash with source/target
 
 ```
-  Usage: cluster <path (default:current path)> [options]
+  Usage: cluster-cli <path (default:current path)> [options]
 
   Clusters files in subdirectories based on month of creation
 
@@ -23,6 +23,8 @@ returns hash with source/target
     -V, --version    output the version number
     -r, --rename     also rename files [YYYY-MM-DD_HH-mm-ss]
     -o, --overwrite  overwrite if file already exists (when rename is disabeld)
+    -d, --details    show detailed output
+    -s, --simulate   simulate
     -y, --yes        skip prompt
 ```
 
