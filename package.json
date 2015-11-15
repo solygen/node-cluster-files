@@ -1,31 +1,33 @@
 {
   "name": "cluster-files",
-  "version": "0.2.0",
-  "description": "CLI that rename files of a directory based on the creation date and clusters them in monthly based subdirectories",
+  "version": "0.3.0",
+  "description": "CLI/module that clusters files in subdirectories based on month of creation",
   "main": "lib/cluster-core",
   "scripts": {
     "compile": "babel --presets es2015 -d bin/ src/",
     "watch": "babel --watch --presets es2015  -d bin/ src/",
-    "lint": "eslint src",
+    "eslint": "eslint src",
+    "eslintfix": "eslint src --fix",
     "prepublish": "npm run compile",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "chalk": "1.1.1",
     "commander": "2.9.0",
     "fs-bfs": "0.1.0",
     "inquirer": "0.11.0",
     "moment": "2.10"
   },
   "engines": {
-    "node": ">=0.10"
+    "node": ">=0.12.7"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/solygen/node-cluster-files.git"
+    "url": "git+https://github.com/solygen/node-cluster-files.git"
   },
   "preferGlobal": true,
   "bin": {
-    "cluster": "bin/cluster.js"
+    "cluster": "bin/cluster-cli.js"
   },
   "keywords": [
     "cli",
