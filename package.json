@@ -1,6 +1,6 @@
 {
   "name": "cluster-files",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "CLI/module that clusters files in subdirectories based on month of creation",
   "main": "lib/cluster-core",
   "scripts": {
