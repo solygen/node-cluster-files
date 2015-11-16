@@ -5,8 +5,9 @@
 
   var program = require('commander');
   var inquirer = require('inquirer');
-  var core = require('./cluster');
   var chalk = require('chalk');
+  var core = require('./cluster');
+  var pjson = require('./../package.json');
   var cli;
 
   cli = {
@@ -16,7 +17,7 @@
     init: function () {
       // define programm
       program
-        .version('0.3.0')
+        .version(pjson.version)
         .usage('<path (default:current path)> [options]')
         .description('Clusters files in subdirectories based on month of creation')
         .option('-r, --rename', 'also rename files [YYYY-MM-DD_HH-mm-ss]')

@@ -62,7 +62,7 @@ mod = {
       if (skipOnConflict && mod._exists(file)) return;
 
         // create subdir when not existing
-      if (!fs.existsSync(file.dir)) fs.mkdirSync(file.dir);
+      if (!options.simulate && !fs.existsSync(file.dir)) fs.mkdirSync(file.dir);
 
         // rename/move
       if (!options.simulate) {
