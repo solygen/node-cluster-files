@@ -9,7 +9,7 @@
     "eslint": "eslint src",
     "eslintfix": "eslint src --fix",
     "prepublish": "npm run compile",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit"
   },
   "dependencies": {
     "chalk": "1.1.1",
