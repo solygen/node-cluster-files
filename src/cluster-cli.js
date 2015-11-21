@@ -8,7 +8,10 @@
   var chalk = require('chalk');
   var core = require('./cluster');
   var pjson = require('./../package.json');
+  var updateNotifier = require('update-notifier');
   var cli;
+
+  updateNotifier({pjson}).notify();
 
   cli = {
 
