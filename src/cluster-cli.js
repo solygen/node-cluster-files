@@ -1,4 +1,4 @@
-//#!/usr/bin/env node
+#!/usr/bin/env node
 'use strict';
 
 (function () {
@@ -11,7 +11,7 @@
   var updateNotifier = require('update-notifier');
   var cli;
 
-  updateNotifier({pjson}).notify();
+  updateNotifier({ pkg: pjson }).notify();
 
   cli = {
 
@@ -61,7 +61,7 @@
       var options = cli.attributes.options;
       var keys = Object.keys(result);
       // simple output
-      if (!options.simulation) console.log(chalk.magenta.underline.bold('SIMULATION'));
+      if (options.simulate) console.log(chalk.magenta.underline.bold('SIMULATION'));
 
       console.log(chalk.magenta('Number of files processed: ' + keys.length));
       if (!options.details) return cli;

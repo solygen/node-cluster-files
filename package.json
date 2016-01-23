@@ -16,7 +16,8 @@
     "commander": "2.9.0",
     "fs-bfs": "0.1.0",
     "inquirer": "0.11.0",
-    "moment": "2.10"
+    "moment": "2.10",
+    "update-notifier": "0.6.0"
   },
   "engines": {
     "node": ">=0.12.7"
