@@ -12,12 +12,12 @@
     "test": "echo \"Error: no test specified\" && exit"
   },
   "dependencies": {
-    "chalk": "1.1.1",
-    "commander": "2.9.0",
+    "chalk": "2.1.0",
+    "commander": "2.11.0",
     "fs-bfs": "0.1.0",
-    "inquirer": "0.11.0",
-    "moment": "2.10",
-    "update-notifier": "0.6.0"
+    "inquirer": "3.2.3",
+    "moment": "~2.18.1",
+    "update-notifier": "2.2.0"
   },
   "engines": {
     "node": ">=0.12.7"
@@ -42,9 +42,9 @@
   },
   "homepage": "https://github.com/solygen",
   "devDependencies": {
-    "babel-preset-es2015": "6.1.18",
-    "babel-cli": "6.1.18",
-    "eslint": "1.9.0",
-    "eslint-config-solygen": "0.1.0"
+    "babel-preset-es2015": "6.24.1",
+    "babel-cli": "6.26.0",
+    "eslint": "4.6.1",
+    "eslint-config-solygen": "0.1.2"
   }
 }
