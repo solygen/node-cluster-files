@@ -1,6 +1,8 @@
 node-cluster-files
 ======================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/solygen/node-cluster-files.svg)](https://greenkeeper.io/)
+
 > CLI that rename files of a directory based on the creation date and clusters them in monthly based subdirectories
 
 __cluster.js__
